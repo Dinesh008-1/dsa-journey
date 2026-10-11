@@ -1,0 +1,43 @@
+# Moore's Voting Algorithm
+
+## 1. Trigger Clues
+- Find an element appearing **more than n/2 times**.
+- Need O(n) time and O(1) extra space.
+
+## 2. Core Intuition
+Cancel pairs of different elements. Since the majority element appears more times than all other elements combined, it cannot be completely cancelled.
+
+## 3. Java Template
+```java
+int count = 0, ele = 0;
+
+for (int num : nums) {
+    if (count == 0) {
+        ele = num;
+        count = 1;
+    } else if (num == ele) {
+        count++;
+    } else {
+        count--;
+    }
+}
+
+return ele;
+```
+
+*Assumes a majority element exists.*
+
+## 4. Complexity
+- **Time:** O(n)
+- **Auxiliary Space:** O(1)
+
+## 5. Common Mistakes
+- Treating the candidate as confirmed when a majority is not guaranteed.
+- Forgetting to verify the candidate with a second pass when necessary.
+- Confusing this with Majority Element II (more than n/3), which requires two candidates.
+
+## 6. Problems Solved
+- Majority Element — LeetCode 169
+
+## 7. Recognition Rule
+**Frequency > n/2 → Think Moore's Voting Algorithm.**
