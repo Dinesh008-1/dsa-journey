@@ -38,6 +38,7 @@ return ele;
 
 ## 6. Problems Solved
 - Majority Element — LeetCode 169
+- Majority Element II
 
 ## 7. Recognition Rule
 **Frequency > n/2 → Think Moore's Voting Algorithm.**
